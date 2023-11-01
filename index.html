@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="banner">
+        <div id="mensagem">Filmes de terror</div>
+        <img src="imagem2.png" alt="" id="img02">
+    </div>
+
+    <header>
+        <div class="cabeca">
+          <nav>
+            <ul>
+              <li><a href="satisfacao.html">Avalie-nos</a></li>
+              <li><a href="compra.html">Fechar compra</a></li>
+              <li><a href="cadastro.html">Cadastrar Usuário</a></li>
+
+            </ul>
+          </nav>
+          
+        </div>
+      </header>
+
+    <div class="imagemTexto">
+    <img src="anna.jpg" alt="">
+    <p>2017 - R$12,90</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="chamado.jpg" alt="">
+    <p>2002 - R$09,75</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="chucky.jpg" alt="">
+    <p>2013 - R$19,35</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="exorcista.jpg" alt="">
+    <p>1973 - R$21,80</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="iluminado.jpg" alt="">
+    <p>1980 - R$15,21</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="invocacao.jpg" alt="">
+    <p>2013 - R$10,20</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="jogos.jpg" alt="">
+    <p>2017 - R$12,10</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="panico.jpg" alt="">
+    <p>2011 - R$10,25</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="pesadelo.jpg" alt="">
+    <p>2010 - R$25,10</p>
+    </div>
+
+    <div class="imagemTexto">
+    <img src="sexta.jpg" alt="">
+    <p>1984 - R$23,80</p>
+    </div>
+
+
+
+    <script>
+        var mensagemElement = document.getElementById("mensagem");
+        var bannerWidth = document.getElementById("banner").offsetWidth;
+        var imagem = document.getElementById("img02");
+
+        function animarMensagem() {
+            var left = -200; // Inicializa a posição à esquerda da tela
+
+            var interval = setInterval(function() {
+                left += 5; // Move 5 pixels à direita a cada iteração
+                mensagemElement.style.left = left + "px";
+                imagem.style.left = (left + 310) + "px"; // Ajuste para manter a imagem ao lado
+
+                if (left >= bannerWidth) {
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        mensagemElement.style.left = "-200px";
+                        imagem.style.left = "calc(50% + 90px)"; // Reinicia a imagem ao lado da mensagem
+                        animarMensagem();
+                    }, 1000);
+                }
+            }, 30);
+        }
+
+        animarMensagem();
+    </script>
+
+</body>
+</html>

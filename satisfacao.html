@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+    <link rel="stylesheet" href="satisfacao.css">
+</head>
+<body>
+
+    <header>
+        <div class="cabeca">
+          <nav>
+            <ul>
+              <li><a href="index.html">Filmes</a></li>
+              <li><a href="compra.html">Fechar compra</a></li>
+              <li><a href="cadastro.html">Cadastrar Usuário</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+      </header>
+
+    Defina seu nível de satisfação:<br>
+    Pouco satisfeito
+    <input type="range" name="satisfacao" min="0" max="10">
+    Muito satisfeito
+    
+
+    <p>Defina em um número entre 1 e 5: </p>
+    <input type="number" id="defina" class="satisfacao">
+
+    <button onclick="confirmar()">Confirmar</button>
+
+    <script>
+        function confirmar(){
+            alert("Obrigado pela sua avaliação");
+        }
+
+    </script>
+    
+</body>
+</html>

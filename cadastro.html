@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+
+    <header>
+        <div class="cabeca">
+          <nav>
+            <ul>
+              <li><a href="satisfacao.html">Avalie-nos</a></li>
+              <li><a href="index.html">Filmes</a></li>
+              <li><a href="compra.html">Fechar compra</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+      </header>
+
+    <form id="cadastroForm">
+        <label for="nome"> Nome e Sobrenome</label>
+        <input type="text" id="nome" class="inputpadrao">
+        <br>
+
+        <label for="email"> Email</label>
+        <input type="email" id="email" class="inputpadrao" required>
+        <br>
+        <label for="telefone" id="telefone"> Telefone</label>
+        <input type="text" id="telefone" class="inputpadrao" required>
+        <br>
+        <label for="senha"> Senha</label>
+        <input type="password" id="senha" class="inputpadrao">
+
+    </form>
+      <input type="button" value="cadastrar" onclick="cadastrarUsuario()" >
+
+    <div id="mensagem"></div>
+
+    <script>
+        function cadastrarUsuario(){
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+        
+        if (nome === "" || email ==="" || senha ==="") {
+            document.getElementById("mensagem").innerHTML= "Por favor, preencha todos os campos."
+            return;
+        }
+
+    var usuario = {
+        nome: nome,
+        email: email,
+        senha: senha
+    };
+
+    console.log("Usuário cadastrado: ", usuario);
+
+    document.getElementById("cadastroForm").reset();
+    document.getElementById("mensagem").innerHTML= "Cadastro realizado com sucesso";
+    }
+    </script>
+    
+</body>
+</html>
